@@ -1,120 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comparative Biospheromics Network</title>
-  <style>
-    /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparative Biospheromics Network</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background-color: #0b0c10;
-    }
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
 
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('background.jpg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
 
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(11, 12, 16, 0.7);
-      z-index: 1;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            padding: 20px;
+        }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #66ffcc;
-      text-shadow: 0 0 10px #66ffcc;
-    }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-    p.tagline {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-      font-weight: 500;
-      color: #a0f0d8;
-      text-shadow: 0 0 6px #2d7d66;
-    }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-    a.cta-button {
-      background-color: #66ffcc;
-      color: #0b0c10;
-      padding: 15px 30px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 40px;
-      box-shadow: 0 4px 12px rgba(102, 255, 204, 0.6);
-      transition: background-color 0.3s ease;
-    }
+        .content p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
 
-    a.cta-button:hover {
-      background-color: #4ad9b4;
-      box-shadow: 0 6px 15px rgba(74, 217, 180, 0.8);
-    }
+        .content ul {
+            list-style-type: none;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
 
-    footer {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
-      z-index: 2;
-      font-style: italic;
-    }
+        .content ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
+        .content ul li::before {
+            content: '•';
+            color: #2e7d32;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
 
-      p.tagline {
-        font-size: 1rem;
-      }
+        .content a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-      a.cta-button {
-        padding: 12px 25px;
-      }
-    }
-  </style>
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 0 15px;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Comparative Biospheromics Network</h1>
-      <p class="tagline">Building scalable ecosystem science infrastructure for biosafety, synthetic biology, and climate resilience.</p>
-      <a href="https://aime2solve.github.io/EcotronScience/" class="cta-button" target="_blank" rel="noopener noreferrer">Explore the Dashboard</a>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Comparative Biospheromics Network</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <p>Welcome to the Comparative Biospheromics Network — a national-scale initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
+        <p>Synthetic biology is advancing faster than our ability to test its effects at the ecosystem level. Human activities are pushing systems beyond known thresholds. And most of our models still rely on tiny plots, simplified variables, or isolated lab work.</p>
+        <p>We need scalable, controlled, ecosystem-scale experiments. That’s what this network is about.</p>
+        <p>Over the past year, I’ve built:</p>
+        <ul>
+            <li>A mock data dashboard for 50+ sites across the U.S., each with 4 controlled domes:
+                <ul>
+                    <li>Control, +CO₂, +Nitrogen, +Heat</li>
+                </ul>
+            </li>
+            <li>A plan to link high schools and universities in collaborative research and STEM learning</li>
+            <li>A vision for open-source, multi-dome biosafety testing infrastructure that serves both science and education</li>
+        </ul>
+        <p>I call this approach <strong>Comparative Biospheromics</strong> - the study of ecosystems under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
+        <p>Learn more about ecotrons and let your senator know about them: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank">https://aime2solve.github.io/EcotronScience/</a></p>
+        <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank">https://www.aime2solve.com/home/200-earths/comparative-biospheromics</a></p>
+        <p>I’m now looking to connect with:</p>
+        <ul>
+            <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
+            <li>Educators interested in real-world STEM projects</li>
+            <li>Funders and foundations who see the need for new infrastructure</li>
+        </ul>
+        <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
+    </section>
+
     <footer>
-      © 2025 Comparative Biospheromics Network
+        <p>&copy; 2025 Comparative Biospheromics Network. All rights reserved.</p>
     </footer>
-  </section>
 </body>
 </html>
