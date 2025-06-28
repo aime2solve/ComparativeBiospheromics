@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparative Biospheromics Network</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0b0c10;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('background.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(11, 12, 16, 0.7);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #66ffcc;
+      text-shadow: 0 0 10px #66ffcc;
+    }
+
+    p.tagline {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-weight: 500;
+      color: #a0f0d8;
+      text-shadow: 0 0 6px #2d7d66;
+    }
+
+    a.cta-button {
+      background-color: #66ffcc;
+      color: #0b0c10;
+      padding: 15px 30px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(102, 255, 204, 0.6);
+      transition: background-color 0.3s ease;
+    }
+
+    a.cta-button:hover {
+      background-color: #4ad9b4;
+      box-shadow: 0 6px 15px rgba(74, 217, 180, 0.8);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      z-index: 2;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p.tagline {
+        font-size: 1rem;
+      }
+
+      a.cta-button {
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Comparative Biospheromics Network</h1>
+      <p class="tagline">Building scalable ecosystem science infrastructure for biosafety, synthetic biology, and climate resilience.</p>
+      <a href="https://aime2solve.github.io/EcotronScience/" class="cta-button" target="_blank" rel="noopener noreferrer">Explore the Dashboard</a>
+    </div>
+    <footer>
+      © 2025 Comparative Biospheromics Network
+    </footer>
+  </section>
+</body>
+</html>
