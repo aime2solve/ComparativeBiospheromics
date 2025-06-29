@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparative Biospheromics Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif; /* Optima with fallbacks */
         }
 
         body {
@@ -21,7 +22,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background-image: url('background.jpg'); /* Ensure this file exists in the main folder. If not working, try raw GitHub URL: url('https://raw.githubusercontent.com/username/repository/main/background.jpg') */
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -38,42 +39,45 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
-            
-            }
+            background: rgba(0, 0, 0, 0.3); /* Slightly darker overlay for mobile readability */
+        }
 
         .hero-content {
             position: relative;
-            max-width: 800px;
-            padding: 20px;
+            max-width: 90%; /* More flexible width for mobile */
+            padding: 15px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Montserrat', sans-serif; /* Keep Montserrat for hero title */
+            font-size: 2.5rem; /* Slightly smaller for better fit */
+            font-weight: 700;
+            color: #B8860B; /* Sunburnt gold */
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .content {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 90%; /* Flexible width for mobile */
+            margin: 30px auto;
+            padding: 0 15px;
         }
 
         .content p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1rem; /* Adjusted for mobile */
         }
 
         .content ul {
             list-style-type: none;
-            margin: 20px 0;
+            margin: 15px 0;
             padding-left: 20px;
         }
 
         .content ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             position: relative;
+            font-size: 0.95rem; /* Slightly smaller for mobile */
         }
 
         .content ul li::before {
@@ -96,10 +100,10 @@
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background: #f5f5f5;
             color: #333;
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Adjusted for mobile */
         }
 
         footer a {
@@ -112,17 +116,54 @@
             text-decoration: underline;
         }
 
+        /* Mobile and Tablet Adjustments */
         @media (max-width: 768px) {
+            .hero {
+                height: 80vh; /* Shorter hero section for mobile */
+            }
+
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Smaller title for mobile */
+                line-height: 1.3; /* Better line spacing */
             }
 
             .content {
-                padding: 0 15px;
+                padding: 0 10px;
             }
 
             .content p {
-                font-size: 1rem;
+                font-size: 0.9rem; /* Smaller text for readability */
+            }
+
+            .content ul li {
+                font-size: 0.85rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem; /* Even smaller for very small screens */
+            }
+
+            .hero-content {
+                padding: 10px;
+            }
+
+            .content {
+                margin: 20px auto;
+            }
+
+            .content p {
+                font-size: 0.85rem;
+            }
+
+            .content ul li {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -138,13 +179,11 @@
         <p>Welcome to the Comparative Biospheromics Network — a national-scale initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
         <p>Synthetic biology is advancing faster than our ability to test its effects at the ecosystem level. Human activities are pushing systems beyond known thresholds. And most of our models still rely on tiny plots, simplified variables, or isolated lab work.</p>
         <p>We need scalable, controlled, ecosystem-scale experiments. That’s what this network is about.</p>
+	<p></p>
         <p>Over the past year, I’ve built:</p>
         <ul>
-            <li>A mock data dashboard for 50+ sites across the U.S., each with 4 controlled domes:
-                <ul>
-                    <li>Control, +CO₂, +Nitrogen, +Heat</li>
-                </ul>
-            </li>
+            <li>A mock data dashboard for 50+ sites across the U.S., each with 4 controlled domes:</li>
+            <li>Control, +CO₂, +Nitrogen, +Heat</li>
             <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank">https://www.aime2solve.com/home/200-earths</a></li>
             <li>A vision for open-source, multi-dome biosafety testing infrastructure that serves both science and education</li>
         </ul>
@@ -162,7 +201,7 @@
     </section>
 
     <footer>
-        <p>About the founder: <a href="https://www.aime2solve.com/home/cv" target="_blank">View Resume</a></p>
+        <p>About the founder, Matt Endrizzi: <a href="https://www.aime2solve.com/home/cv" target="_blank">View CV</a></p>
         <p>Get in touch: <a href="mailto:matt@comparativebiospheromics.org">matt@comparativebiospheromics.org</a></p>
         <p>© 2025 Comparative Biospheromics Network. All rights reserved.</p>
     </footer>
