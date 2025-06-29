@@ -21,7 +21,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background-image: url('background.jpg');
+            background-image: url('background.jpg'); /* Ensure this file exists in the main folder. If not working, try raw GitHub URL: url('https://raw.githubusercontent.com/username/repository/main/background.jpg') */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -39,7 +39,8 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
-        }
+            
+            }
 
         .hero-content {
             position: relative;
@@ -101,6 +102,16 @@
             font-size: 0.9rem;
         }
 
+        footer a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -134,23 +145,26 @@
                     <li>Control, +CO₂, +Nitrogen, +Heat</li>
                 </ul>
             </li>
-            <li>A plan to link high schools and universities in collaborative research and STEM learning</li>
+            <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank">https://www.aime2solve.com/home/200-earths</a></li>
             <li>A vision for open-source, multi-dome biosafety testing infrastructure that serves both science and education</li>
         </ul>
         <p>I call this approach <strong>Comparative Biospheromics</strong> - the study of ecosystems under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
-        <p>Learn more about ecotrons and let your senator know about them: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank">https://aime2solve.github.io/EcotronScience/</a></p>
+        <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank">https://aime2solve.github.io/EcotronScience/</a></p>
         <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank">https://www.aime2solve.com/home/200-earths/comparative-biospheromics</a></p>
         <p>I’m now looking to connect with:</p>
         <ul>
             <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
-            <li>Educators interested in real-world STEM projects</li>
+            <li>Architects, engineers, and builders</li>
+            <li>Educators interested in real-world STEM challenges</li>
             <li>Funders and foundations who see the need for new infrastructure</li>
         </ul>
         <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Comparative Biospheromics Network. All rights reserved.</p>
+        <p>About the founder: <a href="https://www.aime2solve.com/home/cv" target="_blank">View Resume</a></p>
+        <p>Get in touch: <a href="mailto:matt@comparativebiospheromics.org">matt@comparativebiospheromics.org</a></p>
+        <p>© 2025 Comparative Biospheromics Network. All rights reserved.</p>
     </footer>
 </body>
 </html>
