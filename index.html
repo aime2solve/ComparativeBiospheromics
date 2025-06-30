@@ -13,7 +13,7 @@
     <!-- Social Sharing Tags -->
     <meta property="og:title" content="Comparative Biospheromics Network">
     <meta property="og:description" content="Scalable, ecosystem-scale biosafety testing infrastructure for resilient innovation.">
-    <meta property="og:image" content="background.jpg"> <!-- Replace with hosted image URL for social preview -->
+    <meta property="og:image" content="background.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://comparativebiospheromics.org">
 
@@ -30,7 +30,6 @@
             color: #333;
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             height: 60vh;
@@ -110,6 +109,46 @@
             text-decoration: underline;
         }
 
+        .form-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .form-section input,
+        .form-section textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .form-section button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-section p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        #thank-you-message {
+            display: none;
+            margin-top: 15px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
         footer {
             text-align: center;
             padding: 15px;
@@ -128,7 +167,6 @@
             text-decoration: underline;
         }
 
-        /* Mobile and Tablet Adjustments */
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
@@ -189,11 +227,8 @@
 
     <section class="content">
         <p>Welcome to the <strong>Comparative Biospheromics Network</strong> — a national-scale initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
-
         <p>Synthetic biology is advancing faster than our ability to test its effects at the ecosystem level. Human activities are pushing systems beyond known thresholds. And most of our models still rely on tiny plots, simplified variables, or isolated lab work.</p>
-
         <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen our economy, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
-
         <p>Over the past year, I’ve built:</p>
         <ul>
             <li>A vision for open-source, multi-dome biosafety testing infrastructure that serves both science and education</li>
@@ -201,13 +236,9 @@
             <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
             <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
         </ul>
-
         <p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
-
         <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
-
         <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
-
         <p>I’m now looking to connect with:</p>
         <ul>
             <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
@@ -216,8 +247,21 @@
             <li>Experts in space science, aerospace engineering, and life support systems</li>
             <li>Funders and foundations who see the need for new infrastructure</li>
         </ul>
-
         <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
+
+        <div class="form-section">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
+            <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
+            <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
+                <label for="email">Your Email:</label><br>
+                <input type="email" name="email" id="email" required><br><br>
+                <label for="message">Message (optional):</label><br>
+                <textarea name="message" id="message" rows="4"></textarea><br><br>
+                <button type="submit">Send</button>
+                <p id="thank-you-message">Thank you for signing up!</p>
+                <p style="font-size: 0.85rem; color: #666;">We'll only use your email for occasional project updates. No spam, ever.</p>
+            </form>
+        </div>
     </section>
 
     <footer>
@@ -225,5 +269,33 @@
         <p>Get in touch: <a href="mailto:matt@comparativebiospheromics.org">matt@comparativebiospheromics.org</a></p>
         <p>© 2025 Comparative Biospheromics Network. All rights reserved.</p>
     </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.reset();
+                    thankYouMessage.style.display = 'block';
+                } else {
+                    alert('Oops! There was a problem submitting your form.');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem connecting to the server.');
+            });
+        });
+    </script>
 </body>
 </html>
