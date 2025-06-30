@@ -232,18 +232,28 @@
     align-items: center;
     margin-bottom: 8px;
     gap: 4px; /* Tight spacing, ~1 space character */
-    justify-content: flex-start; /* Ensure no stretching */
+    justify-content: flex-start; /* Prevent stretching */
+    max-width: 400px; /* Match input field width to prevent stretching */
 }
 
 .checkbox-container input[type="checkbox"] {
-    margin: 0; /* Remove default margins */
+    margin: 0;
     padding: 0;
-    flex-shrink: 0; /* Prevent checkbox from shrinking */
+    flex-shrink: 0;
+    width: 16px; /* Ensure consistent checkbox size */
+    height: 16px;
 }
 
 .checkbox-container label {
-    margin: 0; /* Remove default margins */
-    padding-left: 2px; /* Minimal padding for fine-tuning */
+    margin: 0;
+    padding-left: 2px; /* Fine-tune spacing */
+    flex-grow: 0; /* Prevent label from expanding */
+    font-size: 0.95rem; /* Match content font size */
+}
+
+/* Ensure the parent div doesn't stretch the checkboxes */
+.form-section > form > div {
+    max-width: 400px; /* Align with input fields */
 }
     </style>
 </head>
@@ -258,6 +268,7 @@
         <p>Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
         <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology  offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its effects at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
         <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
+	<p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
         <p>Over the past year, I’ve built:</p>
         <ul>
             <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
@@ -265,7 +276,6 @@
             <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
             <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
         </ul>
-        <p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
         <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
         <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
         <p>I’m now looking to connect with:</p>
@@ -293,7 +303,7 @@
         <input type="text" name="organization" id="organization"><br><br>
 
         <label>I'm most interested in:</label><br>
-        <div>
+        <div class="checkbox-group">
             <div class="checkbox-container">
                 <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
                 <label>Ecology / Synthetic Biology</label>
