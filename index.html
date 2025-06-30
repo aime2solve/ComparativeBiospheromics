@@ -231,29 +231,32 @@
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    gap: 4px; /* Tight spacing, ~1 space character */
-    justify-content: flex-start; /* Prevent stretching */
-    max-width: 400px; /* Match input field width to prevent stretching */
+    gap: 4px;
+    justify-content: flex-start;
+    max-width: 400px;
 }
 
 .checkbox-container input[type="checkbox"] {
     margin: 0;
     padding: 0;
     flex-shrink: 0;
-    width: 16px; /* Ensure consistent checkbox size */
+    width: 16px;
     height: 16px;
 }
 
 .checkbox-container label {
     margin: 0;
-    padding-left: 2px; /* Fine-tune spacing */
-    flex-grow: 0; /* Prevent label from expanding */
-    font-size: 0.95rem; /* Match content font size */
+    padding-left: 2px;
+    flex-grow: 0;
+    font-size: 0.95rem;
 }
 
-/* Ensure the parent div doesn't stretch the checkboxes */
 .form-section > form > div {
-    max-width: 400px; /* Align with input fields */
+    max-width: 400px;
+}
+
+.intro {
+    font-size: 1.2rem; /* Larger font for opening line */
 }
     </style>
 </head>
@@ -265,84 +268,84 @@
     </section>
 
     <section class="content">
-        <p>Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
-        <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology  offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its effects at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
-        <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
-	<p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
-        <p>Over the past year, I’ve built:</p>
-        <ul>
-            <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
-            <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">200 Earths Project</a></li>
-            <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
-            <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
-        </ul>
-        <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
-        <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
-        <p>I’m now looking to connect with:</p>
-        <ul>
-            <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
-   	    <li>Computational biologists, software engineers, and full-stack developers</li>
-    	    <li>Architects, systems engineers, and sustainable design/build professionals</li>
-    	    <li>Educators passionate about real-world, research-connected STEM learning</li>
-   	    <li>Experts in space systems, aerospace engineering, and closed-loop life support</li>
-   	    <li>Funders and foundations ready to invest in next-generation research infrastructure</li>
-        </ul>
-        <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
+    <p class="intro" style="font-size: 1.2rem;">Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
+    <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its effects at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
+    <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
+    <p>Over the past year, I’ve built:</p>
+    <ul>
+        <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
+        <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">200 Earths Project</a></li>
+        <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
+        <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
+    </ul>
+    <p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
+    <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
+    <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
+    <p>I’m now looking to connect with:</p>
+    <ul>
+        <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
+        <li>Computational biologists, software engineers, and full-stack developers</li>
+        <li>Architects, systems engineers, and sustainable design/build professionals</li>
+        <li>Educators passionate about real-world, research-connected STEM learning</li>
+        <li>Experts in space systems, aerospace engineering, and closed-loop life support</li>
+        <li>Funders and foundations ready to invest in next-generation research infrastructure</li>
+    </ul>
+    <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
 
-        <div class="form-section">
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
-    <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
-    <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
-        <label for="name">Your Name:</label><br>
-        <input type="text" name="name" id="name" required><br><br>
+    <div class="form-section">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
+        <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
+        <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
+            <label for="name">Your Name:</label><br>
+            <input type="text" name="name" id="name" required><br><br>
 
-        <label for="email">Your Email:</label><br>
-        <input type="email" name="email" id="email" required><br><br>
+            <label for="email">Your Email:</label><br>
+            <input type="email" name="email" id="email" required><br><br>
 
-        <label for="organization">Organization (optional):</label><br>
-        <input type="text" name="organization" id="organization"><br><br>
+            <label for="organization">Organization (optional):</label><br>
+            <input type="text" name="organization" id="organization"><br><br>
 
-        <label>I'm most interested in:</label><br>
-        <div class="checkbox-group">
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
-                <label>Ecology / Synthetic Biology</label>
+            <label>I'm most interested in:</label><br><br>
+            <div class="checkbox-group">
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
+                    <label>Ecology / Synthetic Biology</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Computational Biology/Software">
+                    <label>Computational Biology / Software Development</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Engineering/Architecture">
+                    <label>Engineering / Architecture / Sustainable Design</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Education/STEM">
+                    <label>STEM Education & Real-world Learning</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Space Systems">
+                    <label>Space Systems / Aerospace / Life Support</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Funding/Philanthropy">
+                    <label>Funding / Philanthropic Investment</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="interest" value="Other">
+                    <label>Other</label>
+                </div>
             </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Computational Biology/Software">
-                <label>Computational Biology / Software Development</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Engineering/Architecture">
-                <label>Engineering / Architecture / Sustainable Design</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Education/STEM">
-                <label>STEM Education & Real-world Learning</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Space Systems">
-                <label>Space Systems / Aerospace / Life Support</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Funding/Philanthropy">
-                <label>Funding / Philanthropic Investment</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Other">
-                <label>Other</label>
-            </div>
-        </div>
 
-        <label for="message">Message (optional):</label><br>
-        <textarea name="message" id="message" rows="4"></textarea><br><br>
+            <label for="message">Message (optional):</label><br>
+            <textarea name="message" id="message" rows="4"></textarea><br><br>
 
-        <button type="submit">Send</button>
-        <p id="thank-you-message">Thank you for signing up!</p>
-        <p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
-    </form>
-</div>
-    </section>
+            <button type="submit">Send</button>
+            <p id="thank-you-message">Thank you for signing up!</p>
+            <p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
+        </form>
+    </div>
+</section>
 
     <footer>
         <p>About the founder, Matt Endrizzi: <a href="https://www.aime2solve.com/home/cv" target="_blank" rel="noopener noreferrer">View CV</a></p>
