@@ -261,35 +261,58 @@
         <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
 
         <div class="form-section">
-            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
-            <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
-            <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
-    		<label for="email">Your Email:</label><br>
-    		<input type="email" name="email" id="email" required><br><br>
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
+    <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
+    <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
+        <label for="name">Your Name:</label><br>
+        <input type="text" name="name" id="name" required><br><br>
 
-    		<label for="organization">Organization (optional):</label><br>
-   		<input type="text" name="organization" id="organization"><br><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" name="email" id="email" required><br><br>
 
-   		<label>I'm most interested in:</label><br>
-    		<div style="margin-bottom: 10px;">
-        		<label><input type="checkbox" name="interest" value="Ecology/Synthetic Biology"> Ecology / Synthetic Biology</label><br>
-        		<label><input type="checkbox" name="interest" value="Computational Biology/Software"> Computational Biology / Software Development</label><br>
-        		<label><input type="checkbox" name="interest" value="Engineering/Architecture"> Engineering / Architecture / Sustainable Design</label><br>
-       			<label><input type="checkbox" name="interest" value="Education/STEM"> STEM Education & Real-world Learning</label><br>
-        		<label><input type="checkbox" name="interest" value="Space Systems"> Space Systems / Aerospace / Life Support</label><br>
-        		<label><input type="checkbox" name="interest" value="Funding/Philanthropy"> Funding / Philanthropic Investment</label><br>
-        		<label><input type="checkbox" name="interest" value="Other"> Other</label>
-    		</div>
+        <label for="organization">Organization (optional):</label><br>
+        <input type="text" name="organization" id="organization"><br><br>
 
-    		<label for="message">Message (optional):</label><br>
-    		<textarea name="message" id="message" rows="4"></textarea><br><br>
-
-    		<button type="submit">Send</button>
-    		<p id="thank-you-message">Thank you for signing up!</p>
-    		<p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
-	    </form>
-
+        <label>I'm most interested in:</label><br>
+        <div style="margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Ecology/Synthetic Biology" style="margin-right: 8px;">
+                <label>Ecology / Synthetic Biology</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Computational Biology/Software" style="margin-right: 8px;">
+                <label>Computational Biology / Software Development</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Engineering/Architecture" style="margin-right: 8px;">
+                <label>Engineering / Architecture / Sustainable Design</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Education/STEM" style="margin-right: 8px;">
+                <label>STEM Education & Real-world Learning</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Space Systems" style="margin-right: 8px;">
+                <label>Space Systems / Aerospace / Life Support</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Funding/Philanthropy" style="margin-right: 8px;">
+                <label>Funding / Philanthropic Investment</label>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <input type="checkbox" name="interest" value="Other" style="margin-right: 8px;">
+                <label>Other</label>
+            </div>
         </div>
+
+        <label for="message">Message (optional):</label><br>
+        <textarea name="message" id="message" rows="4"></textarea><br><br>
+
+        <button type="submit">Send</button>
+        <p id="thank-you-message">Thank you for signing up!</p>
+        <p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
+    </form>
+</div>
     </section>
 
     <footer>
