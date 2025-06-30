@@ -226,6 +226,25 @@
                 font-size: 0.8rem;
             }
         }
+
+	.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 4px; /* Tight spacing, ~1 space character */
+    justify-content: flex-start; /* Ensure no stretching */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0; /* Remove default margins */
+    padding: 0;
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+.checkbox-container label {
+    margin: 0; /* Remove default margins */
+    padding-left: 2px; /* Minimal padding for fine-tuning */
+}
     </style>
 </head>
 <body>
@@ -241,7 +260,7 @@
         <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
         <p>Over the past year, I’ve built:</p>
         <ul>
-            <li>A vision for open-source, multi-dome biosafety testing infrastructure that serves both science and education</li>
+            <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
             <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">200 Earths Project</a></li>
             <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
             <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
@@ -274,34 +293,34 @@
         <input type="text" name="organization" id="organization"><br><br>
 
         <label>I'm most interested in:</label><br>
-        <div style="margin-bottom: 10px;">
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Ecology/Synthetic Biology" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Ecology / Synthetic Biology</label>
+        <div>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
+                <label>Ecology / Synthetic Biology</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Computational Biology/Software" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Computational Biology / Software Development</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Computational Biology/Software">
+                <label>Computational Biology / Software Development</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Engineering/Architecture" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Engineering / Architecture / Sustainable Design</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Engineering/Architecture">
+                <label>Engineering / Architecture / Sustainable Design</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Education/STEM" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">STEM Education & Real-world Learning</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Education/STEM">
+                <label>STEM Education & Real-world Learning</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Space Systems" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Space Systems / Aerospace / Life Support</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Space Systems">
+                <label>Space Systems / Aerospace / Life Support</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Funding/Philanthropy" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Funding / Philanthropic Investment</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Funding/Philanthropy">
+                <label>Funding / Philanthropic Investment</label>
             </div>
-            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                <input type="checkbox" name="interest" value="Other" style="margin-right: 4px;">
-                <label style="margin-left: 2px;">Other</label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="interest" value="Other">
+                <label>Other</label>
             </div>
         </div>
 
