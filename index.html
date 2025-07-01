@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
-
     <!-- Meta Description for SEO -->
     <meta name="description" content="The Comparative Biospheromics Network is a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.">
 
@@ -21,11 +20,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://comparativebiospheromics.org">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Comparative Biospheromics Network">
-<meta name="twitter:description" content="Scalable, ecosystem-scale biosafety testing infrastructure for resilient innovation.">
-<meta name="twitter:image" content="https://comparativebiospheromics.org/CBN-Web.jpg">
-
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comparative Biospheromics Network">
+    <meta name="twitter:description" content="Scalable, ecosystem-scale biosafety testing infrastructure for resilient innovation.">
+    <meta name="twitter:image" content="https://comparativebiospheromics.org/CBN-Web.jpg">
 
     <style>
         * {
@@ -70,7 +68,7 @@
         }
 
         .hero-content h1 {
-   	    font-family: 'Orbitron', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             font-weight: 700;
             color: #FFD700;
@@ -177,6 +175,91 @@
             text-decoration: underline;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .close {
+            color: #333;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        .modal-content ol {
+            list-style-position: inside;
+            margin: 15px 0;
+            padding-left: 10px;
+        }
+
+        .modal-content ol li {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .modal-content ol li strong {
+            color: #2e7d32;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 4px;
+            justify-content: flex-start;
+            max-width: 400px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin: 0;
+            padding: 0;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-container label {
+            margin: 0;
+            padding-left: 2px;
+            flex-grow: 0;
+            font-size: 0.95rem;
+        }
+
+        .form-section > form > div {
+            max-width: 400px;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
@@ -197,6 +280,15 @@
 
             .content ul li {
                 font-size: 0.85rem;
+            }
+
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
+
+            .modal-content ol li {
+                font-size: 0.9rem;
             }
 
             footer {
@@ -225,39 +317,16 @@
             .content ul li {
                 font-size: 0.8rem;
             }
+
+            .modal-content {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .modal-content ol li {
+                font-size: 0.85rem;
+            }
         }
-
-	.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    gap: 4px;
-    justify-content: flex-start;
-    max-width: 400px;
-}
-
-.checkbox-container input[type="checkbox"] {
-    margin: 0;
-    padding: 0;
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-}
-
-.checkbox-container label {
-    margin: 0;
-    padding-left: 2px;
-    flex-grow: 0;
-    font-size: 0.95rem;
-}
-
-.form-section > form > div {
-    max-width: 400px;
-}
-
-.intro {
-    font-size: 1.2rem; /* Larger font for opening line */
-}
     </style>
 </head>
 <body>
@@ -268,89 +337,125 @@
     </section>
 
     <section class="content">
-    <p class="intro" style="font-size: 1.2rem;">Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
-    <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its effects at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
-    <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
-    <p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
-    <p>Over the past year, I’ve built:</p>
-    <ul>
-        <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
-        <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">200 Earths Project</a></li>
-        <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
-        <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
-    </ul>
-    
-    <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
-    <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
-    <p>I’m now looking to connect with:</p>
-    <ul>
-        <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
-        <li>Computational biologists, software engineers, and full-stack developers</li>
-        <li>Architects, systems engineers, and sustainable design/build professionals</li>
-        <li>Educators passionate about real-world, research-connected STEM learning</li>
-        <li>Experts in space systems, aerospace engineering, and closed-loop life support</li>
-        <li>Funders and foundations ready to invest in next-generation research infrastructure</li>
-    </ul>
-    <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
+        <p class="intro">Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
+        <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its effects at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
+        <p>We need scalable, controlled, ecosystem-scale experiments to build resilient innovation—tools that strengthen economies, protect ecosystems, and guide the future of biotechnology. That’s what this network is about.</p>
+        <p><strong>Comparative Biospheromics</strong> is the study of closed, instrumented ecosystems—ecotrons—under parallel experimental conditions at meaningful spatial and temporal scales using a combination of biospheric and omics data.</p>
+        <p>Over the past year, I’ve built:</p>
+        <ul>
+            <li>A vision for an open-source, modular biosafety testing infrastructure that advances both science and education</li>
+            <li>A plan to link high schools and universities in collaborative research and STEM learning called 200 Earths: <a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">200 Earths Project</a></li>
+            <li>A mock data dashboard for 200 Earths hypothesizing 50+ U.S. sites, each with 4 experimental domes: Control, +CO₂, +Nitrogen, +Heat</li>
+            <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
+        </ul>
 
-    <div class="form-section">
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
-    <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
-    <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
-        <label for="name">Your Name:</label><br>
-        <input type="text" name="name" id="name" required><br><br>
+        <button id="experiments-btn" style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0;">Explore Field-Ready Experiments</button>
 
-        <label for="email">Your Email:</label><br>
-        <input type="email" name="email" id="email" required><br><br>
+        <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
+        <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
+        <p>I’m now looking to connect with:</p>
+        <ul>
+            <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
+            <li>Computational biologists, software engineers, and full-stack developers</li>
+            <li>Architects, systems engineers, and sustainable design/build professionals</li>
+            <li>Educators passionate about real-world, research-connected STEM learning</li>
+            <li>Experts in space systems, aerospace engineering, and closed-loop life support</li>
+            <li>Funders and foundations ready to invest in next-generation research infrastructure</li>
+        </ul>
+        <p>Let’s rethink how we test solutions for the biosphere—before they’re deployed in the wild.</p>
 
-        <label for="organization">Organization (optional):</label><br>
-        <input type="text" name="organization" id="organization"><br><br>
-
-        <label>I'm interested in:</label><br><br>
-        <div class="checkbox-group">
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
-                <label>Ecology / Synthetic Biology</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Computational Biology/Software">
-                <label>Computational Biology / Software Development</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Engineering/Architecture">
-                <label>Engineering / Architecture / Sustainable Design</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Education/STEM">
-                <label>STEM Education & Real-world Learning</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Space Systems">
-                <label>Space Systems / Aerospace / Life Support</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Funding/Philanthropy">
-                <label>Funding / Philanthropic Investment</label>
-            </div>
-	    <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Biosafety/Containment">
-                <label>Biosafety / Containment</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="checkbox" name="interest" value="Other">
-                <label>Other</label>
+        <div id="experiments-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">×</span>
+                <h2 style="font-family: 'Orbitron', sans-serif; color: #2e7d32; margin-bottom: 20px;">Examples of Field-Ready Experimentation for Ecosystem-Scale Biosafety</h2>
+                <ol>
+                    <li><strong>Gene Flow Containment Trials</strong><br>
+                        <strong>Scenario:</strong> Introduce a non-pathogenic, genetically marked microbe (e.g., a GFP-tagged soil bacterium or algae) into a closed ecocell or semi-open habitat.<br>
+                        <strong>Goal:</strong> Track how far engineered genes or organisms move in soil, water, or plant systems; test physical, chemical, or genetic containment strategies.<br>
+                        <strong>Use Case:</strong> Inform environmental release guidelines for agricultural or remediation applications.
+                    </li>
+                    <li><strong>Synthetic–Wild Microbiome Interaction Studies</strong><br>
+                        <strong>Scenario:</strong> Introduce a synthetic microbial consortium designed for nitrogen fixation or methane reduction into a controlled plant-soil system with native microbiota.<br>
+                        <strong>Goal:</strong> Assess how the engineered microbes affect species composition, gene transfer, nutrient cycling, and resilience.<br>
+                        <strong>Use Case:</strong> Evaluate ecosystem-level risks/benefits of engineered microbes for agriculture or climate mitigation.
+                    </li>
+                    <li><strong>Biomass & Ecosystem Function Modeling under Synthetic Inputs</strong><br>
+                        <strong>Scenario:</strong> Add bioengineered plant lines (e.g., with altered root architecture or stress tolerance genes) into a native micro-ecosystem.<br>
+                        <strong>Goal:</strong> Observe effects on biomass accumulation, water use, pollinator visitation, and species interactions.<br>
+                        <strong>Use Case:</strong> Assess long-term ecological fitness and unintended impacts of GM plants beyond monoculture test plots.
+                    </li>
+                    <li><strong>Ecotron-Based Stress Testing</strong><br>
+                        <strong>Scenario:</strong> Run parallel ecosystems withiculous biology interventions (e.g., carbon sequestration strains, stress-response enhancers) under varied environmental stressors (heat, drought, nutrients).<br>
+                        <strong>Goal:</strong> Measure ecosystem stability, feedback loops, and failure thresholds.<br>
+                        <strong>Use Case:</strong> Evaluate biotech resilience claims and identify failure points before scaled deployment.
+                    </li>
+                    <li><strong>Horizontal Gene Transfer Monitoring</strong><br>
+                        <strong>Scenario:</strong> Release engineered microbes with biosafety circuit elements (e.g., kill switches, dependency on synthetic amino acids) and monitor HGT frequency in soil, aquatic, or gut-like communities.<br>
+                        <strong>Goal:</strong> Quantify risks of gene escape and validate biocontainment tools under realistic conditions.<br>
+                        <strong>Use Case:</strong> Support regulatory safety cases and synthetic gene circuit certification.
+                    </li>
+                </ol>
             </div>
         </div>
-        <br>
-        <label for="message">Message (optional):</label><br>
-        <textarea name="message" id="message" rows="4"></textarea><br><br>
 
-        <button type="submit">Send</button>
-        <p id="thank-you-message">Thank you for signing up!</p>
-        <p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
-    </form>
-</div>
-</section>
+        <div class="form-section">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
+            <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
+            <form id="contact-form" action="https://formspree.f/xeokneqj" method="POST">
+                <label for="name">Your Name:</label><br>
+                <input type="text" name="name" id="name" required><br><br>
+
+                <label for="email">Your Email:</label><br>
+                <input type="email" name="email" id="email" required><br><br>
+
+                <label for="organization">Organization (optional):</label><br>
+                <input type="text" name="organization" id="organization"><br><br>
+
+                <label>I'm interested in:</label><br><br>
+                <div class="checkbox-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Ecology/Synthetic Biology">
+                        <label>Ecology / Synthetic Biology</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Computational Biology/Software">
+                        <label>Computational Biology / Software Development</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Engineering/Architecture">
+                        <label>Engineering / Architecture / Sustainable Design</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Education/STEM">
+                        <label>STEM Education & Real-world Learning</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Space Systems">
+                        <label>Space Systems / Aerospace / Life Support</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Funding/Philanthropy">
+                        <label>Funding / Philanthropic Investment</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Biosafety/Containment">
+                        <label>Biosafety / Containment</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="interest" value="Other">
+                        <label>Other</label>
+                    </div>
+                </div>
+                <br>
+                <label for="message">Message (optional):</label><br>
+                <textarea name="message" id="message" rows="4"></textarea><br><br>
+
+                <button type="submit">Send</button>
+                <p id="thank-you-message">Thank you for signing up!</p>
+                <p style="font-size: 0.85rem; color: #666;">I'll only use your email for occasional project updates. No spam, ever.</p>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <p>About the founder, Matt Endrizzi: <a href="https://www.aime2solve.com/home/cv" target="_blank" rel="noopener noreferrer">View CV</a></p>
@@ -359,6 +464,7 @@
     </footer>
 
     <script>
+        // Form submission
         const form = document.getElementById('contact-form');
         const thankYouMessage = document.getElementById('thank-you-message');
 
@@ -383,6 +489,25 @@
             .catch(error => {
                 alert('There was a problem connecting to the server.');
             });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('experiments-modal');
+        const btn = document.getElementById('experiments-btn');
+        const closeBtn = document.getElementById('close-modal');
+
+        btn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
