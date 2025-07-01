@@ -350,10 +350,12 @@
         </ul>
 
         <button id="experiments-btn" style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0;">Explore Field-Ready Experiments</button>
-
+        
+        <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">
+            <button style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0;">Explore Data Dashboards</button>
+        </a>
         <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
-        <p>Explore data dashboards: <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Comparative Biospheromics Dashboards</a></p>
-	<br>
+        <br>
         <p>I’m now looking to connect with:</p>
         <ul>
             <li>Researchers in ecology, synthetic biology, and environmental engineering</li>
@@ -386,7 +388,7 @@
                         <strong>Use Case:</strong> Assess long-term ecological fitness and unintended impacts of GM plants beyond monoculture test plots.
                     </li>
                     <li><strong>Ecotron-Based Stress Testing</strong><br>
-                        <strong>Scenario:</strong> Run parallel ecosystems withiculous biology interventions (e.g., carbon sequestration strains, stress-response enhancers) under varied environmental stressors (heat, drought, nutrients).<br>
+                        <strong>Scenario:</strong> Run parallel ecosystems with and without synthetic biology interventions (e.g., carbon sequestration strains, stress-response enhancers) under varied environmental stressors (heat, drought, nutrients).<br>
                         <strong>Goal:</strong> Measure ecosystem stability, feedback loops, and failure thresholds.<br>
                         <strong>Use Case:</strong> Evaluate biotech resilience claims and identify failure points before scaled deployment.
                     </li>
@@ -402,7 +404,7 @@
         <div class="form-section">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
             <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
-            <form id="contact-form" action="https://formspree.f/xeokneqj" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
                 <label for="name">Your Name:</label><br>
                 <input type="text" name="name" id="name" required><br><br>
 
@@ -474,7 +476,7 @@
             const formData = new FormData(form);
             fetch(form.action, {
                 method: form.method,
-                body: formData,
+                body цюformData,
                 headers: {
                     'Accept': 'application/json'
                 }
