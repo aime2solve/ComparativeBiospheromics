@@ -349,10 +349,9 @@
             <li>A data dashboard for Oak Ridge National Laboratory's SPRUCE project</li>
         </ul>
 
-        <button id="experiments-btn" style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0;">Explore Field-Ready Experiments</button>
-        
+        <button id="experiments-btn" style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0; display: block;">Explore Field-Ready Experiments</button>
         <a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">
-            <button style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0;">Explore Data Dashboards</button>
+            <button style="background-color: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin: 15px 0; display: block;">Explore Data Dashboards</button>
         </a>
         <p>Learn more about ecotrons and share with your senators: <a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></p>
         <br>
@@ -369,7 +368,7 @@
 
         <div id="experiments-modal" class="modal">
             <div class="modal-content">
-                <span id="close-modal" class="close">×</span>
+                <span id="close-modal" class="close">&times;</span>
                 <h2 style="font-family: 'Orbitron', sans-serif; color: #2e7d32; margin-bottom: 20px;">Examples of Field-Ready Experimentation for Ecosystem-Scale Biosafety</h2>
                 <ol>
                     <li><strong>Gene Flow Containment Trials</strong><br>
@@ -476,7 +475,7 @@
             const formData = new FormData(form);
             fetch(form.action, {
                 method: form.method,
-                body цюformData,
+                body: formData,
                 headers: {
                     'Accept': 'application/json'
                 }
@@ -499,19 +498,23 @@
         const btn = document.getElementById('experiments-btn');
         const closeBtn = document.getElementById('close-modal');
 
-        btn.addEventListener('click', function() {
-            modal.style.display = 'block';
-        });
+        if (modal && btn && closeBtn) {
+            btn.addEventListener('click', function() {
+                modal.style.display = 'block';
+            });
 
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
+            closeBtn.addEventListener('click', function() {
                 modal.style.display = 'none';
-            }
-        });
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        } else {
+            console.error('Modal elements not found:', { modal, btn, closeBtn });
+        }
     </script>
 </body>
 </html>
