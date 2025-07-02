@@ -446,9 +446,9 @@
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="https://www.aime2solve.com/home/cv" target="_blank" rel="noopener noreferrer">Founder</a></li>
-            <li><a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">STEM Project</a></li>
+            <li><a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">Projects</a></li>
             <li><a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">Ecotron Science</a></li>
-            <li><a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Data Dashboards</a></li>
+            <li><a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Dashboards</a></li>
             <li><a href="#connect" class="connect-link">Connect</a></li>
         </ul>
     </nav>
@@ -661,10 +661,6 @@
             connectLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 connectSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Adjust for sticky navigation bar
-                setTimeout(() => {
-                    window.scrollBy(0, -60); // Offset by 60px to account for nav bar
-                }, 0);
                 if (window.innerWidth <= 768) {
                     navUl.classList.remove('active'); // Close mobile menu after clicking
                 }
