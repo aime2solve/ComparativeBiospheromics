@@ -71,9 +71,9 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             font-weight: 700;
-            color: #FFD700; /* Reverted to bright gold */
+            color: #FFD700;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Original shadow for contrast */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         /* Navigation Bar Styles */
@@ -564,28 +564,32 @@
         const form = document.getElementById('contact-form');
         const thankYouMessage = document.getElementById('thank-you-message');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.reset();
-                    thankYouMessage.style.display = 'block';
-                } else {
-                    alert('Oops! There was a problem submitting your form.');
-                }
-            })
-            .catch(error => {
-                alert('There was a problem connecting to the server.');
+        if (form && thankYouMessage) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        thankYouMessage.style.display = 'block';
+                    } else {
+                        alert('Oops! There was a problem submitting your form.');
+                    }
+                })
+                .catch(error => {
+                    alert('There was a problem connecting to the server.');
+                });
             });
-        });
+        } else {
+            console.error('Form elements not found:', { form, thankYouMessage });
+        }
 
         // Modal functionality
         const modal = document.getElementById('experiments-modal');
@@ -614,24 +618,29 @@
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('.nav-bar ul');
 
-        hamburger.addEventListener('click', () => {
-            navUl.classList.toggle('active');
-        });
+        if (hamburger && navUl) {
+            hamburger.addEventListener('click', () => {
+                navUl.classList.toggle('active');
+            });
+        } else {
+            console.error('Navigation elements not found:', { hamburger, navUl });
+        }
 
-        // Smooth scroll for Connect link with offset
+        // Smooth scroll for Connect link
         const connectLink = document.querySelector('.connect-link');
-        connectLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const connectSection = document.querySelector('#connect');
-            connectSection.scrollIntoView({ behavior: 'smooth' });
-            // Adjust scroll position to ensure "Join the Network" is at the top
-            setTimeout(() => {
-                window.scrollBy(0, -50); // Offset by 50px to align heading at top
-            }, 0);
-            if (window.innerWidth <= 768) {
-                navUl.classList.remove('active'); // Close mobile menu after clicking
-            }
-        });
+        const connectSection = document.querySelector('#connect');
+
+        if (connectLink && connectSection) {
+            connectLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                connectSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.innerWidth <= 768) {
+                    navUl.classList.remove('active'); // Close mobile menu after clicking
+                }
+            });
+        } else {
+            console.error('Connect link or section not found:', { connectLink, connectSection });
+        }
     </script>
 </body>
 </html>
