@@ -71,9 +71,9 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             font-weight: 700;
-            color: #000000;
+            color: #FFD700; /* Reverted to bright gold */
             margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Original shadow for contrast */
         }
 
         /* Navigation Bar Styles */
@@ -426,7 +426,7 @@
             <li><a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">Projects</a></li>
             <li><a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></li>
             <li><a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Dashboards</a></li>
-            <li><a href="#contact" class="contact-link">Contact</a></li>
+            <li><a href="#connect" class="connect-link">Connect</a></li>
         </ul>
     </nav>
 
@@ -494,7 +494,7 @@
             </div>
         </div>
 
-        <div id="contact" class="form-section">
+        <div id="connect" class="form-section">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
             <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
             <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
@@ -618,11 +618,16 @@
             navUl.classList.toggle('active');
         });
 
-        // Smooth scroll for Contact link
-        const contactLink = document.querySelector('.contact-link');
-        contactLink.addEventListener('click', (e) => {
+        // Smooth scroll for Connect link with offset
+        const connectLink = document.querySelector('.connect-link');
+        connectLink.addEventListener('click', (e) => {
             e.preventDefault();
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+            const connectSection = document.querySelector('#connect');
+            connectSection.scrollIntoView({ behavior: 'smooth' });
+            // Adjust scroll position to ensure "Join the Network" is at the top
+            setTimeout(() => {
+                window.scrollBy(0, -50); // Offset by 50px to align heading at top
+            }, 0);
             if (window.innerWidth <= 768) {
                 navUl.classList.remove('active'); // Close mobile menu after clicking
             }
