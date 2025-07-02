@@ -196,6 +196,15 @@
             border-top: 1px solid #ddd;
         }
 
+        /* Fix for Connect tab overscroll */
+        .form-section::before {
+            content: '';
+            display: block;
+            height: 60px; /* Matches nav-bar height */
+            margin-top: -60px;
+            visibility: hidden;
+        }
+
         .form-section input,
         .form-section textarea {
             width: 100%;
@@ -391,6 +400,25 @@
             .nav-bar li {
                 margin: 10px 0;
                 text-align: center;
+            }
+
+            /* Ensure all tab text is visible in mobile menu */
+            .nav-bar ul.active a {
+                color: #2e7d32;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-bar ul.active a:hover {
+                background-color: #2e7d32;
+                color: white;
+                border-radius: 6px;
+            }
+
+            .nav-bar ul.active .active {
+                background-color: #2e7d32;
+                color: white;
+                border-radius: 6px;
             }
 
             .hamburger {
