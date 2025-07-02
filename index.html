@@ -58,7 +58,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.1); /* Reduced opacity for brighter image */
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .hero-content {
@@ -71,9 +71,67 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             font-weight: 700;
-            color: #000000; /* Changed to black */
+            color: #000000;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8); /* White shadow for contrast */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Navigation Bar Styles */
+        .nav-bar {
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+
+        .nav-bar ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar li {
+            margin: 0 20px;
+        }
+
+        .nav-bar a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .nav-bar .active {
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 6px;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #2e7d32;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            right: 15px;
+            top: 10px;
         }
 
         .content {
@@ -295,6 +353,30 @@
                 font-size: 0.8rem;
                 padding: 10px;
             }
+
+            /* Mobile Navigation */
+            .nav-bar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #f5f5f5;
+                position: absolute;
+                top: 50px;
+                left: 0;
+            }
+
+            .nav-bar ul.active {
+                display: flex;
+            }
+
+            .nav-bar li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
@@ -336,6 +418,18 @@
         </div>
     </section>
 
+    <nav class="nav-bar">
+        <button class="hamburger">☰</button>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="https://www.aime2solve.com/home/cv" target="_blank" rel="noopener noreferrer">About</a></li>
+            <li><a href="https://www.aime2solve.com/home/200-earths" target="_blank" rel="noopener noreferrer">Projects</a></li>
+            <li><a href="https://aime2solve.github.io/EcotronScience/" target="_blank" rel="noopener noreferrer">EcotronScience</a></li>
+            <li><a href="https://www.aime2solve.com/home/200-earths/comparative-biospheromics" target="_blank" rel="noopener noreferrer">Dashboards</a></li>
+            <li><a href="#contact" class="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+
     <section class="content">
         <p class="intro">Welcome to the <strong>Comparative Biospheromics Network</strong> — a U.S.-launched international initiative to study ecosystem resilience and biosafety through distributed ecotron research.</p>
         <p>Human activities are pushing ecosystems beyond known thresholds. Synthetic biology offers a multitude of potentially promising solutions, but the field is advancing faster than our ability to test its fitness and safety at the ecosystem level. Most of our models still rely on tiny plots, oversimplified variables, or isolated lab studies.</p>
@@ -368,7 +462,7 @@
 
         <div id="experiments-modal" class="modal">
             <div class="modal-content">
-                <span id="close-modal" class="close">&times;</span>
+                <span id="close-modal" class="close">×</span>
                 <h2 style="font-family: 'Orbitron', sans-serif; color: #2e7d32; margin-bottom: 20px;">Examples of Field-Ready Experimentation for Ecosystem-Scale Biosafety</h2>
                 <ol>
                     <li><strong>Gene Flow Containment Trials</strong><br>
@@ -400,7 +494,7 @@
             </div>
         </div>
 
-        <div class="form-section">
+        <div id="contact" class="form-section">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #2e7d32; margin-bottom: 10px;">Join the Network</h2>
             <p>Sign up to stay informed about the Comparative Biospheromics initiative, research updates, and educational opportunities.</p>
             <form id="contact-form" action="https://formspree.io/f/xeokneqj" method="POST">
@@ -515,6 +609,24 @@
         } else {
             console.error('Modal elements not found:', { modal, btn, closeBtn });
         }
+
+        // Navigation toggle for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('.nav-bar ul');
+
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+
+        // Smooth scroll for Contact link
+        const contactLink = document.querySelector('.contact-link');
+        contactLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+            if (window.innerWidth <= 768) {
+                navUl.classList.remove('active'); // Close mobile menu after clicking
+            }
+        });
     </script>
 </body>
 </html>
